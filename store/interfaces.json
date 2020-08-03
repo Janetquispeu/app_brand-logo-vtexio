@@ -1,0 +1,24 @@
+{
+  "brand-logo": {
+    "component": "BrandLogo",
+    "content": {
+      "$ref": "app:marketplace2.brand-logo#/definitions/Image"
+    },
+    "required": [
+      "product-images",
+      "product-name",
+      "product-price",
+      "sku-selector",
+      "buy-button",
+      "product-description",
+      "product-specifications"
+    ],
+    "allowed": [
+      "breadcrumb",
+      "shipping-simulator",
+      "availability-subscriber",
+      "share",
+      "product-highlights"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "vendor": "marketplace2",
+  "name": "brand-logo",
+  "version": "0.0.7",
+  "title": "brand-logo",
+  "description": "Brand Logo component",
+  "builders": {
+    "store": "0.x",
+    "react": "3.x",
+    "messages": "1.x",
+    "docs": "0.x"
+  },
+  "dependencies": {
+    "vtex.native-types": "0.x",
+    "vtex.device-detector": "0.x",
+    "vtex.css-handles": "0.x",
+    "vtex.slider-layout": "0.x",
+    "vtex.list-context": "0.x",
+    "vtex.product-summary-context": "0.x",
+    "vtex.app-store-components": "0.x",
+    "vtex.product-context": "0.x",
+    "vtex.store-graphql": "2.x",
+    "vtex.breadcrumb": "1.x",
+    "vtex.store-components": "3.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

@@ -1,0 +1,14 @@
+{
+  "definitions": {
+    "brandLogo": {
+      "title": "admin/editor.brand-logo.title",
+      "properties": {
+        "image": {
+          "title": "admin/editor.brand-logo.image.title",
+          "description": "admin/editor.brand-logo.image.description",
+          "$ref": "app:marketplace2.brand-logo#/definitions/text"
+        }
+      }
+    }
+  }
+}
