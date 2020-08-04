@@ -1,25 +1,29 @@
-import PropTypes from 'prop-types'
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from 'vtex.product-context';
+import { path } from 'ramda';
 
 interface IProps {
   image: string;
 }
 
-export class BrandLogo extends React.Component<IProps, {}> {
-  static propTypes = {
-    image: PropTypes.string
-  }
+const getSkuId = path(['selectedItem', 'itemId']);
+const getProductId = path(['product', 'productId']);
 
-  render () {
-    const { image } = this.props;
+const BrandLogo = (props:IProps) => {
 
-    return (
-      <div>
-        <span>Vendido por: </span>
-        <img src={image} />
-      </div>
-    );
-  }
+  const { image } = props;
+  const productContext = useContext(ProductContext);
+  const skuId = getSkuId(productContext);
+  const productId = getProductId(productContext);
+
+  return (
+    <div>
+      <span>Vendido por:</span>
+      <img src={image} />
+      <div>skuId: {skuId}</div>
+      <div>productId: {productId}</div>
+    </div>
+  );
 }
 
 export default BrandLogo;

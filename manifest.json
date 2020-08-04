@@ -1,7 +1,7 @@
 {
   "vendor": "marketplace2",
   "name": "brand-logo",
-  "version": "0.0.8",
+  "version": "0.0.14",
   "title": "brand-logo",
   "description": "Brand Logo component",
   "builders": {

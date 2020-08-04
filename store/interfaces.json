@@ -1,8 +1,5 @@
 {
   "brand-logo": {
-    "component": "BrandLogo",
-    "content": {
-      "$ref": "app:marketplace2.brand-logo#/definitions/brandLogo"
-    }
+    "component": "BrandLogo"
   }
 }
