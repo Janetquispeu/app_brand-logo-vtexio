@@ -5,16 +5,33 @@
   "main": "index.js",
   "license": "ISC",
   "dependencies": {
-    "@types/ramda": "^0.27.14",
+    "@types/ramda": "0.27.14",
     "@types/react": "16.9.44",
     "@types/react-dom": "16.9.8",
-    "ramda": "^0.27.1",
+    "@types/styled-components": "^5.1.2",
+    "file-loader": "^6.0.0",
+    "ramda": "0.27.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "client:start": "webpack-dev-server --devtool inline-source-map --hot --config config/webpack/dev.js",
+    "client:build": "webpack --config config/webpack/prod.js"
   },
   "devDependencies": {
     "@types/node": "10.12.21",
+    "@vtex/tsconfig": "0.4.4",
+    "awesome-typescript-loader": "5.2.1",
+    "clean-webpack-plugin": "3.0.0",
+    "dotenv-webpack": "2.0.0",
+    "html-webpack-plugin": "4.3.0",
+    "stylelint": "13.6.1",
+    "stylelint-custom-processor-loader": "0.6.0",
     "typescript": "3.8.3",
-    "@vtex/tsconfig": "0.4.4"
+    "vtex.product-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-context@0.8.0/public/@types/vtex.product-context",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   }
 }
