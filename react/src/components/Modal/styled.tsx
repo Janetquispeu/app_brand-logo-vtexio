@@ -18,6 +18,9 @@ export const ModalBox = styled.div`
   background-color: #fff;
   border-radius: 5px;
   padding: 10px;
+  width: ${(props) => (props['width'] ? props['width'] : '800px')};
+  height: 400px;
+  overflow-y: scroll;
 `;
 
 export const ButtonWrapper = styled.div`
