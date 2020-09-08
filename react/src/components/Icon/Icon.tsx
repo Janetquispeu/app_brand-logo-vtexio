@@ -9,15 +9,12 @@ interface Props {
 
 export const Icon: React.SFC<Props> = ({ icon, fill, size }) => {
   const routeSplit = icon.split('/');
-  console.log(icon, 'icon');
-  console.log(routeSplit, 'routeSplit');
   const iconName = routeSplit[routeSplit.length - 1].split('.')[0];
-  console.log(iconName, 'iconName');
 
   return (
     <IconWrapper data-fill={fill} data-size={size}>
-      <svg className={`icon ${iconName}`}>
-        <use xlinkHref={`${icon}#${iconName}`} />
+      <svg className={`icon icon-close`}>
+        <use xlinkHref={`${icon}#icon-close`} />
       </svg>
     </IconWrapper>
   );

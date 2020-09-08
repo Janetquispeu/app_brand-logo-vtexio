@@ -2,7 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from '../Icon';
 import { icons } from '../../assets/icons';
-import { ModalBackground, ModalBox, ButtonWrapper, ButtonClose, Content } from './styled';
+import { ModalBackground, ModalHeader, TextHeader, ModalBox, ButtonWrapper, ButtonClose, Content } from './styled';
 
 interface IProps {
   children: React.ReactNode;
@@ -20,11 +20,12 @@ export const Modal: React.StatelessComponent<IProps> = ({ children, visible, han
   return createPortal(
     <ModalBackground>
       <ModalBox data-width={width}>
-        <ButtonWrapper>
-          <ButtonClose onClick={handlerClose}>
-            <Icon icon={icons.close} fill="#C4C4C4" size="18px" />
-          </ButtonClose>
-        </ButtonWrapper>
+        <ModalHeader>
+          <TextHeader>CONDICIONES DEL PROVEEDOR</TextHeader>
+          <ButtonWrapper onClick={handlerClose}>
+            <ButtonClose src={icons.close}></ButtonClose>
+          </ButtonWrapper>
+        </ModalHeader>
         <Content>
           {children}
         </Content>

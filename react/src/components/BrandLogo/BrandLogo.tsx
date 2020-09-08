@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect, FunctionComponent } from 'react';
-// import { ProductContext } from 'vtex.product-context';
+import { ProductContext } from 'vtex.product-context';
 import { path } from 'ramda';
 import { masterDataService } from '../../services/masterdata';
-import { icons } from '../../assets/icons/index';
-import { Icon } from '../Icon';
+// import { icons } from '../../assets/icons/index';
+// import { Icon } from '../Icon';
 import Modal from '../Modal';
 import { getNameSeller } from '../../utils';
-import { BrandLogoWrapper, Image, Content, ImageWrapper, IconWrapper } from './styled';
+import { BrandLogoWrapper, Image, Content, ImageWrapper, Text, LinkWrapper, Link, ModalLogo } from './styled';
 
 interface ISeller {
   imageUrl: string;
@@ -21,9 +21,9 @@ const BrandLogo: FunctionComponent = () => {
     terms: ''
   });
   const [visible, setVisible] = useState(false);
-  // const productContext = useContext(ProductContext);
-  // const skuId:any = getSkuId(productContext);
-  const skuId = '1';
+  const productContext = useContext(ProductContext);
+  const skuId:any = getSkuId(productContext);
+  // const skuId = '1';
 
   useEffect(() => {
     const nameSeller = getNameSeller(skuId.toString());
@@ -53,16 +53,19 @@ const BrandLogo: FunctionComponent = () => {
   return(
     <BrandLogoWrapper>
       <Content>
-        <span>Vendido por:</span>
+        <div>
+          <Text>Vendido y despachado por:</Text>
+          <LinkWrapper onClick={showModal}>
+            <Link>Términos y condiciones</Link>
+          </LinkWrapper>
+        </div>
         <ImageWrapper>
           <Image src={seller.imageUrl} />
         </ImageWrapper>
-        <IconWrapper onClick={showModal}>
-          <Icon icon={icons.close} fill="#C4C4C4" size="18px" />
-        </IconWrapper>
       </Content>
-      <Modal width='800px' visible={visible} handlerClose={closeModal}>
-        {seller.terms}
+      <Modal width='500px' visible={visible} handlerClose={closeModal}>
+        <ModalLogo><Image src={seller.imageUrl} /></ModalLogo>
+        <div>{seller.terms}</div>
       </Modal>
     </BrandLogoWrapper>
   );
